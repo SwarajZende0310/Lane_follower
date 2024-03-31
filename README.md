@@ -17,3 +17,7 @@ This repository contains the code and resources for a four-wheeled differential 
 ## Software Architecture
 
 ![Software Architecture](/resources/software_architecture.png)
+
+---
+
+## [Motor Driver Manual](/resources/MDDS30-Users-Manual.pdf)
