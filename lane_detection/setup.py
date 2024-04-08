@@ -24,6 +24,9 @@ setup(
     entry_points={
         'console_scripts': [
             'lane_detector = scripts.lane_detector:main',
+            'camera_test = scripts.camera_test:main',
+            'lane_node = scripts.lane_node:main',
+            'yellow_mask = scripts.yellow_mask:main',
         ],
     },
 )
