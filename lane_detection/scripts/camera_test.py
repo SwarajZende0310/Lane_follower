@@ -3,7 +3,7 @@ import cv2
 def main():
     print('Camera_test')
 
-    cap = cv2.VideoCapture(15)
+    cap = cv2.VideoCapture(2)
     
     while True:
         ret,frame = cap.read()

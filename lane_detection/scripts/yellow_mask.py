@@ -34,7 +34,7 @@ def mask_yellow(frame):
   return masked_frame
 
 # Capture video from webcam
-cap = cv2.VideoCapture(15)
+cap = cv2.VideoCapture(2)
 
 while True:
   # Read a frame from the webcam

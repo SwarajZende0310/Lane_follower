@@ -24,11 +24,14 @@ class cmd_vel_pub(Node):
         elif(direction == 'RIGHT'):
             msg.angular.z = -self.angular_vel
         self.publisher_.publish(msg)
+    
+    def sweep(self):
+        pass
 
 def mask_yellow(frame):
   hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
-  lower_yellow = np.array([16,83,129])
+  lower_yellow = np.array([16,105,76])
   upper_yellow = np.array([255,255,255])
 
   mask = cv2.inRange(hsv, lower_yellow, upper_yellow)
@@ -42,7 +45,7 @@ def main():
     rclpy.init()
     velocity_publisher = cmd_vel_pub()
 
-    cap = cv2.VideoCapture(15)
+    cap = cv2.VideoCapture(2)
     
     theta=0
     minLineLength = 5
@@ -64,6 +67,8 @@ def main():
                     cv2.line(image,(x1,y1),(x2,y2),(0,255,0),2)
                     theta=theta+math.atan2((y2-y1),(x2-x1))
                     print(theta)
+        else:
+            print('Line not detected. Enter Sweep')
 
         threshold=6
         if(theta>threshold):
